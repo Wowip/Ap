@@ -20,7 +20,7 @@ after_script:
   - cd ..
   - ls
   - git init
-  - git remote add origin git@github.com:Wowip/Ap.git
+  - git remote add github git@github.com:Wowip/Ap.git
   - git checkout master
   - sudo chmod 600 .ssh/id_rsa
   - sudo chmod 600 .ssh/id_rsa.pub
