@@ -3,13 +3,9 @@ sudo: required
 
 install:
   - sudo Rscript -e "install.packages('knitr', repos = c('http://yihui.name/xran', 'http://cran.rstudio.org'), type = 'source')"
-
-before_script:
-  - git config --global user.email "arturoinosencio@gmail.com"
-  - git config --global user.name "Wowip"
   
 script:
-  - sh script.sh
+  - sudo sh script.sh
 
 after_script:
   - ls
@@ -22,7 +18,6 @@ after_script:
   - git init
   - git remote add github git@github.com:Wowip/Ap.git
   - git remot -v
-  - git checkout master
   - sudo chmod 600 .ssh/id_rsa
   - sudo chmod 600 .ssh/id_rsa.pub
   - ls -a
@@ -32,4 +27,6 @@ after_script:
   - ssh -T git@github.com
   - git add .
   - git commit -m "añadiendo pruebas"
-  - git push
+  - git config --global user.email "arturoinosencio@gmail.com"
+  - git config --global user.name "Wowip"
+  - git push origin master
