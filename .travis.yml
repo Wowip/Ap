@@ -17,7 +17,7 @@ after_script:
   - ls
   - git init
   - git remote -v
-  - git remote remove origin
+  - git remote rm origin
   - git remote add github git@github.com:Wowip/Ap.git
   - git remote -v
   - sudo chmod 600 .ssh/id_rsa
@@ -28,8 +28,8 @@ after_script:
   - ssh-add .ssh/id_rsa
   - ssh -T git@github.com
   - git checkout master
-  - git config user.email "arturoinosencio@gmail.com"
-  - git config user.name "Wowip"
+  - git config --global user.email "arturoinosencio@gmail.com"
+  - git config --global user.name "Wowip"
   - git add .
   - git commit -m "añadiendo pruebas"
   - git push origin master
